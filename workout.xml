@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!-- acciones -->
+        <record model="ir.action.act_window" id="act_exercise_window">
+            <field name="name">Exercises</field>
+            <field name="res_model">workout.exercise</field>
+        </record>
+        <record model="ir.action.act_window" id="act_muscle_window">
+            <field name="name">Muscle</field>
+            <field name="res_model">workout.muscle</field>
+        </record>
+        <!-- vistas -->
+        <!--record model="ir.action.act_windows.view" id="act_library_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="library_view_tree"/>
+            <field name="act_window" ref="act_library_windows"/>
+        </record-->
+
+        <record model="ir.ui.view" id="exercise_view_tree">
+            <field name="model">workout.exercise</field>
+            <field name="type">tree</field>
+            <field name="name">exercise_tree</field>
+        </record>
+
+        <record model="ir.ui.view" id="exercise_view_form">
+            <field name="model">workout.exercise</field>
+            <field name="type">form</field>
+            <field name="name">exercise_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="muscle_view_tree">
+            <field name="model">workout.muscle</field>
+            <field name="type">tree</field>
+            <field name="name">muscle_tree</field>
+        </record>
+
+        <!--record model="ir.ui.view" id="muscle_view_form">
+            <field name="model">workout.muscle</field>
+            <field name="type">form</field>
+            <field name="name">muscle_form</field>
+        </record-->
+
+
+        <!-- iconos
+        Se define como tipo ir.ui.icon y se le da una id, un nombre y la ruta (name="path") donde esta el arhivo svg
+        luego se puede usar añadiendo la propiedad icon="nombre_del_icono"
+        -->
+        <record model="ir.ui.icon" id="workout_icon">
+            <field name="name">workout-icon</field>
+            <field name="path">icons/workout.svg</field>
+        </record>
+
+        <record model="ir.ui.icon" id="exercise_icon">
+            <field name="name">exercise-icon</field>
+            <field name="path">icons/exercise.svg</field>
+        </record>
+
+        <!-- menus -->
+        <menuitem name="Workout" sequence="0" id="menu_workout" icon="workout-icon"/>
+        <menuitem name="Exercises" parent="menu_workout" id="menu_exercise"
+                  action="act_exercise_window" icon="exercise-icon"/>
+        <menuitem name="Configuration" sequence="0" id="menu_workout_configuration" parent="menu_workout"/>
+        <menuitem name="Muscles" action="act_muscle_window" sequence="0" id="menu_workout_muscle"
+                  parent="menu_workout_configuration"/>
+
+    </data>
+</tryton>

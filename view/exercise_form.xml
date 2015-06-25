@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- Las vistas se define con su propio archivo xml dentro de la carpeta view del modulo -->
+<form string="Exercises" col="8">
+    <label name="name" colspan="1" xalign="0.0"/>
+    <field name="name" colspan="7" xalign="0.0" xfill="1"/>
+    <newline />
+    <label name="description" colspan="1" xalign="0.0" />
+    <newline />
+    <field name="description" colspan="8"/>
+</form>

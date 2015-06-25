@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<!-- Las vistas se define con su propio archivo xml dentro de la carpeta view del modulo -->
+<tree string="Muscle" editable="bottom">
+    <field name="name"/>
+</tree>
